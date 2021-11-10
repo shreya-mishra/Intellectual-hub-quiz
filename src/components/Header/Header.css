@@ -1,0 +1,29 @@
+.title {
+  text-transform: uppercase;
+  font-size: 3vw;
+   font-weight: 200;
+  font-family: "Montserrat", sans-serif;
+  cursor: pointer;
+  color:orange;
+}
+.header__icon{
+    display:flex;
+    justify-content: space-between;
+ 
+    align-items: center;
+
+}
+svg.MuiSvgIcon-root {
+    color: orange;
+}
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.divider {
+  margin: 10px;
+  width: 100%;
+ 
+}

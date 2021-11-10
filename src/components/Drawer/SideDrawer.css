@@ -1,0 +1,10 @@
+.MuiPaper-root.MuiDrawer-paper.MuiDrawer-paperAnchorRight.MuiPaper-elevation16 {
+    background-color: #101c3c;
+    border: 1px solid black;
+    box-sizing: border-box;
+    color: #FFD662FF;
+  
+}
+ul.MuiList-root.MuiList-padding {
+    margin: 30px;
+}
