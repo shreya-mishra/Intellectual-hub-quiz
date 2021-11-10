@@ -20,6 +20,11 @@ a {
   border: 8px solid #39445a93;
   margin: 2px;
   padding: 5px;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("./home1.jpeg");
 }
 .backgroundImage {
   transform: scaleY(-1 -1);
