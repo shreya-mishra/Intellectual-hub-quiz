@@ -16,7 +16,7 @@ a {
   color: inherit;
 }
 .app {
-  min-height: 98.5vh;
+  height: 98.5vh;
   border: 8px solid #39445a93;
   margin: 2px;
   padding: 5px;
