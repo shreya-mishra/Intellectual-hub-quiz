@@ -11,3 +11,23 @@ export const sections = [
   // { title: 'Profile', icon: <RecentActorsIcon />, url: "/" },
   // { title: 'Logout', icon: <ExitToAppIcon />, url: "/" }
 ];
+export const categories = [
+  {
+    category: "Movie",
+    pic: "http://devinardya-quizmaster.surge.sh/static/media/movie-icon.719897dc.svg",
+    setCat: "Entertainment: Film",
+    categoryId: 11,
+  },
+  {
+    category: "Music",
+    pic: "http://devinardya-quizmaster.surge.sh/static/media/music-icon.469e959f.svg",
+    setCat: "Entertainment: Musicals & Theatres",
+    categoryId: 12,
+  },
+  {
+    category: "Book N Comic",
+    pic: "http://devinardya-quizmaster.surge.sh/static/media/books-icon.3b876aa2.svg",
+    setCat: "Entertainment: Comics",
+    categoryId: 10,
+  },
+];
