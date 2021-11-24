@@ -7,25 +7,24 @@ import Header from "./components/Header/Header";
 import Home from "./pages/Home/Home";
 import Quiz from "./pages/Quiz/Quiz";
 import Result from "./pages/Result/Result";
-import HomeImage from "./home2.jpeg";
+import { useHistory } from "react-router";
 
 const App = () => {
   const [name, setName] = useState("");
   const [category, setCategory] = useState("");
   const [questions, setQuestions] = useState();
   const [score, setScore] = useState(0);
-
-  const fetchQuestions = async (category = "", difficulty = "") => {
-    const { data } = await axios.get(
-      // `https://opentdb.com/api.php?amount=10${category && `&category=${category}`}${difficulty && `&difficulty=${difficulty}`}&type=multiple`
-
-      // `https://opentdb.com/api.php?amount=10&category=16&difficulty=easy&type=multiple`
-      `https://opentdb.com/api.php?amount=10${
-        category && `&category=${category}`
-      }&difficulty=easy&type=multiple`
-    );
-    console.log("hello", data);
-    setQuestions(data.results);
+  const history = useHistory();
+  const fetchQuestions = async (type = false) => {
+    console.log("Category is ", category);
+    const url = `https://opentdb.com/api.php?amount=10${
+      category && `&category=${category}`
+    }&difficulty=easy&type=multiple`;
+    console.log("URL is ", url);
+    axios.get(url).then((res) => {
+      setQuestions(res.data.results);
+      type && history.push("/quiz");
+    });
   };
 
   useEffect(() => {
@@ -33,19 +32,19 @@ const App = () => {
   }, []);
 
   return (
-    <BrowserRouter>
-      <div className="app">
+    <>
+      <div className='app' style={{ backgroundImage: "url(./home2.jpg)" }}>
         <Header />
         <Switch>
           {/* home */}
-          <Route path="/" exact>
+          <Route path='/' exact>
             <Home
               category={category}
               setCategory={setCategory}
               fetchQuestions={fetchQuestions}
             />
           </Route>
-          <Route path="/quiz" exact>
+          <Route path='/quiz' exact>
             <Quiz
               name={name}
               questions={questions}
@@ -54,13 +53,13 @@ const App = () => {
               setQuestions={setQuestions}
             />
           </Route>
-          <Route path="/result" exact>
+          <Route path='/result' exact>
             <Result score={score} name={name} />
           </Route>
         </Switch>
       </div>
       <Footer />
-    </BrowserRouter>
+    </>
   );
 };
 
